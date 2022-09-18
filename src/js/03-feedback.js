@@ -20,7 +20,6 @@ function onInput(evt) {
 }
 function populate() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  console.log(savedMessage);
   if (savedMessage) {
     refs.email.value = savedMessage.email;
     refs.textArea.value = savedMessage.message;

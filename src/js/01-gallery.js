@@ -5,9 +5,9 @@ import { galleryItems } from './gallery-items';
 const galleryEl = document.querySelector('.gallery');
 const elements = galleryItems
   .map(element => {
-    return `<li><a class="gallery__item" href="${element.original}">
+    return `<a class="gallery__item" href="${element.original}">
   <img class="gallery__image" src="${element.preview}" alt="${element.description}" />
-</a></li>`;
+</a>`;
   })
   .join('');
 galleryEl.insertAdjacentHTML('afterbegin', elements);
