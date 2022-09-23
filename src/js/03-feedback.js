@@ -13,7 +13,9 @@ populate();
 function onFormSubmit(evt) {
   evt.preventDefault();
   evt.currentTarget.reset();
+  console.log(formData);
   localStorage.removeItem(STORAGE_KEY);
+  formData = {};
 }
 function onInput(evt) {
   if (savedMessage) {
@@ -23,10 +25,10 @@ function onInput(evt) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 function populate() {
-  if (savedMessage.email) {
+  if (savedMessage?.email) {
     refs.email.value = savedMessage.email;
   }
-  if (savedMessage.message) {
+  if (savedMessage?.message) {
     refs.textArea.value = savedMessage.message;
   }
   return;
